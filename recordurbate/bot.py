@@ -132,7 +132,7 @@ class Bot:
                         self.logger.info("Started to record {}".format(streamer[0]))
 
                         # prep args (dl bin and config)
-                        args = self.config["youtube-dl_cmd"].split(" ") + ["https://chaturbate.com/?next=/{}/".format(streamer[0]), "--config-location", self.config["youtube-dl_config"]] 
+                        args = self.config["youtube-dl_cmd"].split(" ") + ["https://chaturbate.com/{}/".format(streamer[0]), "--config-location", self.config["youtube-dl_config"]] 
                         
                         # append idx and process to processes list
                         self.processes.append([streamer[0], subprocess.Popen(args, 0)])
